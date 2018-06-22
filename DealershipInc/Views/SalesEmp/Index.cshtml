@@ -1,0 +1,35 @@
+﻿@using DealershipInc.Controllers
+@model IEnumerable<DealershipInc.Models.Vehicle>
+
+@{
+    ViewBag.Title = "Sales Menu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Main Menu</h2>
+
+
+<!-- Display All customers in DB -->
+<p>
+    @Html.ActionLink("Customers", "Cust", "SalesEmp")
+</p>
+
+<!-- Display All vehicles in DB to view only mode -->
+<p>
+    @Html.ActionLink("Inventory", "Vehicles", "SalesEmp")
+</p>
+
+<!-- Display all customers with a salesform -->
+<p>
+    @Html.ActionLink("View Active Customers", "ActiveCust", "SalesEmp")
+</p>
+
+<!-- View Add Ons -->
+<p>
+    @Html.ActionLink("View Vehicle Addons", "AddOns", "SalesEmp")
+</p>
+
+<!-- Create a new sale form -->
+<p>
+    @Html.ActionLink("Create New Sale Form", "NewForm", "SalesEmp")
+</p>

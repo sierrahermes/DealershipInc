@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DealershipInc.Models.CarSalesForm>
+
+@{
+    ViewBag.Title = "Active Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Active Customers</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleAddOn.Manufacturer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.EMail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vehicle.isNewFlag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DealerBranch.Address)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleAddOn.Manufacturer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.EMail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vehicle.isNewFlag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DealerBranch.Address)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.CarSaleFormID })
+        </td>
+    </tr>
+}
+
+</table>

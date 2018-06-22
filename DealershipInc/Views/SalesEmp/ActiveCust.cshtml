@@ -1,0 +1,43 @@
+﻿@model IEnumerable<DealershipInc.Models.Customer>
+
+
+@{
+    ViewBag.Title = "Active Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Active Customers</h2>
+
+<p>
+     @Html.ActionLink("Back to Menu", "Index", "SalesEmp")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreditScore)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreditScore)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", "Customers", new { id = item.CustomerID }, null) |
+            </td>
+        </tr>
+    }
+</table>

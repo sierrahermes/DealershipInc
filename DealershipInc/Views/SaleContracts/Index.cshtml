@@ -1,0 +1,70 @@
+﻿@model IEnumerable<DealershipInc.Models.SaleContract>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ContractDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isCashFlag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FinanceRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FinanceTerm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DueMonthly)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarSalesForm.VIN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PartnerBank.BankID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContractDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isCashFlag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FinanceRate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FinanceTerm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DueMonthly)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarSalesForm.VIN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PartnerBank.BankID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SaleContractID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SaleContractID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SaleContractID })
+        </td>
+    </tr>
+}
+
+</table>

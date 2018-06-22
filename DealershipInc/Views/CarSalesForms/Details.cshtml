@@ -1,0 +1,67 @@
+﻿@model DealershipInc.Models.CarSalesForm
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CarSalesForm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleAddOn.Manufacturer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleAddOn.Manufacturer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.EMail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.EMail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle.isNewFlag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle.isNewFlag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DealerBranch.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DealerBranch.Address)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CarSaleFormID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

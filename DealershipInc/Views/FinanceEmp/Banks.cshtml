@@ -1,0 +1,58 @@
+﻿@model IEnumerable<DealershipInc.Models.PartnerBank>
+
+@{
+    ViewBag.Title = "Partner Banks";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Partner Banks</h2>
+
+<p>
+    @Html.ActionLink("Back to Menu", "Index") | @Html.ActionLink("Create New", "Create", "PartnerBanks")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BadCreditRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FairCreditRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoodCreditRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExcellentCreditRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxLoanTerm)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BadCreditRate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FairCreditRate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GoodCreditRate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExcellentCreditRate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxLoanTerm)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "PartnerBanks", new { id = item.BankID }, null) |
+                @Html.ActionLink("Details", "Details", "PartnerBanks", new { id = item.BankID }, null)
+            </td>
+        </tr>
+    }
+
+</table>

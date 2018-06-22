@@ -1,0 +1,26 @@
+﻿@using DealershipInc.Controllers
+
+@{
+    ViewBag.Title = "Finance Menu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Main Menu</h2>
+
+
+<!-- Display All Banks in DB -->
+<p>
+    @Html.ActionLink("Banks", "Banks", "FinanceEmp")
+</p>
+
+<!-- Get Sales Contracts -->
+<p>
+    @Html.ActionLink("Contracts", "Contracts", "FinanceEmp")
+</p>
+
+
+<!-- Display all customers with a salesform -->
+<p>
+    @Html.ActionLink("View Active Customers", "Index", "CarSalesForms")
+</p>
+

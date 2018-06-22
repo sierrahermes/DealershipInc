@@ -1,0 +1,96 @@
+﻿@model IEnumerable<DealershipInc.Models.Vehicle>
+
+@{
+    ViewBag.Title = "Vehicle Inventory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>All Vehicles</h2>
+
+<p>
+    @Html.ActionLink("Back to Menu", "Index")
+</p>
+
+
+@using (Html.BeginForm())
+{
+    <p>
+        Search by Type: @Html.TextBox("SearchString")
+        <input type="submit" value="Search">
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isNewFlag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateAdded)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DealerBranch.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Manufacturer.CompanyName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isNewFlag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Photo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateAdded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DealerBranch.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manufacturer.CompanyName)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", "Vehicles", new { id = item.VIN }, null) |
+            </td>
+        </tr>
+    }
+
+</table>
+<p>
+    Value of current inventory: $@Model.Sum(x => x.Price)
+</p>
+<p>
+    Average price of inventory: $@Model.Average(x => x.Price)
+</p>
+<p>
+    Min price of inventory: $@Model.Min(x => x.Price)
+</p>
+<p>
+    Max price of inventory: $@Model.Max(x => x.Price)
+</p>

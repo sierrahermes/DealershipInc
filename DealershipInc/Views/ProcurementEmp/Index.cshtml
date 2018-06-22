@@ -1,0 +1,15 @@
+﻿@model IEnumerable<DealershipInc.Models.Vehicle>
+
+@{
+    ViewBag.Title = "Procurement";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Main Menu</h2>
+
+<p>
+    @Html.ActionLink("Vehicle Inventory", "VehicleInv", "ProcurementEmp") 
+</p>
+<p>
+    @Html.ActionLink("Add-On Inventory", "AddOnInv", "ProcurementEmp")
+</p>

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<DealershipInc.Models.Vehicle>
+
+@{
+    ViewBag.Title = "Procurement";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Inventory Control</h2>
+
+<p>
+    @Html.ActionLink("Main Menu", "Index", "ProcurementEmp")  |@Html.ActionLink("New Vehicle", "Create", "Vehicles")
+</p>
+<table class="table">
+    <h3></h3>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isNewFlag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateAdded)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DealerBranch.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Manufacturer.CompanyName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isNewFlag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Photo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateAdded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DealerBranch.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manufacturer.CompanyName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Vehicles", new { id = item.VIN }, null) |
+                @Html.ActionLink("Details", "Details", "Vehicles", new { id = item.VIN }, null) |
+                @Html.ActionLink("Delete", "Delete", "Vehicles", new { id = item.VIN }, null)
+            </td>
+        </tr>
+    }
+
+</table>

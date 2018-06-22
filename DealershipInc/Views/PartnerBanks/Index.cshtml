@@ -1,0 +1,58 @@
+﻿@model IEnumerable<DealershipInc.Models.PartnerBank>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BadCreditRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FairCreditRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoodCreditRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExcellentCreditRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxLoanTerm)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BadCreditRate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FairCreditRate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoodCreditRate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExcellentCreditRate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxLoanTerm)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BankID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BankID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BankID })
+        </td>
+    </tr>
+}
+
+</table>

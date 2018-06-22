@@ -1,0 +1,76 @@
+﻿@model DealershipInc.Models.SaleContract
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+
+<p>
+    <a href="javascript:history.back()">Go Back</a> | @Html.ActionLink("Edit", "Edit", new { id = Model.SaleContractID })
+</p>
+<div>
+    <h4>SaleContract</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContractDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isCashFlag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isCashFlag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinanceRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinanceRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinanceTerm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinanceTerm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DueMonthly)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DueMonthly)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CarSalesForm.VIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarSalesForm.VIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PartnerBank.BankID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PartnerBank.BankID)
+        </dd>
+
+    </dl>
+</div>
+
